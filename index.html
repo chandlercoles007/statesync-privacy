@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – StateSync</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
+        h1 { color: #1a73e8; }
+        h2 { color: #444; margin-top: 30px; }
+        ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
 
+<h1>Privacy Policy for StateSync</h1>
+<p><strong>Effective Date:</strong> September 23, 2026</p>
+
+<h2>1. Overview</h2>
+<p>StateSync ("the Extension") is a session backup tool designed for use within a closed laboratory environment. It captures the session state of the active browser tab — cookies, localStorage, and sessionStorage — encrypts it locally, and transmits the encrypted data to a private repository controlled by the laboratory administrator.</p>
+<p>This policy explains what data is collected, how it is handled, and the rights of the lab members who use it.</p>
+
+<h2>2. Data Collection</h2>
+<p>The Extension collects the following data from the <strong>active browser tab only</strong>:</p>
+<ul>
+    <li><strong>Cookies</strong> — including name, value, domain, path, secure/httpOnly flags, sameSite attribute, expiration date, and partition key. Some cookie values may contain authentication tokens.</li>
+    <li><strong>localStorage</strong> — all key-value pairs stored by the active page.</li>
+    <li><strong>sessionStorage</strong> — all key-value pairs stored by the active page.</li>
+    <li><strong>URLs</strong> — the main page URL and the URLs of embedded frames, used to associate captured data with the correct website.</li>
+</ul>
+<p>The Extension does <strong>not</strong> collect:</p>
+<ul>
+    <li>Browsing history beyond the active tab URL</li>
+    <li>Website content (HTML, images, text)</li>
+    <li>Passwords or form data</li>
+    <li>Keystrokes, screenshots, or user input</li>
+    <li>Personally identifiable information beyond what is contained within cookies</li>
+</ul>
+
+<h2>3. Data Encryption</h2>
+<p>All captured data is encrypted <strong>locally in the browser</strong> using:</p>
+<ul>
+    <li><strong>AES-256-GCM</strong> for the payload</li>
+    <li><strong>RSA-2048 (OAEP)</strong> for encrypting the AES key</li>
+    <li><strong>gzip compression</strong> before encryption</li>
+</ul>
+<p>The RSA private key required for decryption is held <strong>offline by the lab administrator</strong> and is never stored in the Extension, on any server, or in the destination repository.</p>
+
+<h2>4. Data Transmission and Storage</h2>
+<p>The encrypted payload is transmitted over <strong>HTTPS</strong> to a private GitHub repository controlled by the lab administrator. The repository is set to private, and access is restricted to the administrator's account via a scoped access token.</p>
+<p>No third-party services, cloud providers, or analytics are involved in the transmission or storage of the data.</p>
+
+<h2>5. Purpose of Data Collection</h2>
+<p>The sole purpose of the Extension is to preserve browser sessions for legitimate lab activities, including:</p>
+<ul>
+    <li>Restoring authentication sessions across lab workstations</li>
+    <li>Backing up session state before tests or experiments</li>
+    <li>Debugging and analysing session behaviour in a controlled environment</li>
+</ul>
+<p>All lab members are informed of and consent to this data collection as part of their participation in the lab environment.</p>
+
+<h2>6. Data Sharing</h2>
+<p>No data is shared, sold, or disclosed to any third party. The data remains entirely within the closed infrastructure of the laboratory — from the browser, over an encrypted channel, to the lab-administered repository.</p>
+
+<h2>7. Security</h2>
+<ul>
+    <li><strong>Encryption:</strong> AES-256-GCM + RSA-2048 hybrid encryption</li>
+    <li><strong>Key handling:</strong> Private key stored offline; only the public key is present in the Extension</li>
+    <li><strong>Transmission:</strong> HTTPS (TLS 1.2/1.3) for all network requests</li>
+    <li><strong>Access control:</strong> Repository is private; token is scoped to a single repository</li>
+    <li><strong>No local storage:</strong> The Extension does not store captured cookies in browser storage</li>
+</ul>
+
+<h2>8. User Control</h2>
+<ul>
+    <li>Lab members can disable or uninstall the Extension at any time</li>
+    <li>Data stored in the repository can be deleted by the lab administrator</li>
+    <li>Users who wish to opt out should contact the lab administrator</li>
+</ul>
+
+<h2>9. Contact</h2>
+<p>For questions about this privacy policy, contact the lab administrator at: <a href="mailto:privacy@synccookie.com">privacy@synccookie.com</a></p>
+
+<h2>10. Changes to This Policy</h2>
+<p>This policy may be updated to reflect changes in the Extension or lab practices. The latest version will always be available at this URL.</p>
+
+<p><em>Last updated: September 23, 2026.</em></p>
+
+</body>
+</html>
